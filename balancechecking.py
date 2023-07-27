@@ -37,6 +37,8 @@ class Solution:
                 if char in ["{", "[", "("]:
                     stack.append(char)
                 else:
+                    if len(stack) == 0:
+                        return False
                     if stack[-1] == "{" and char == "}":
                         stack.pop()
                     elif stack[-1] == "(" and char == ")":
@@ -45,6 +47,8 @@ class Solution:
                         stack.pop()
                     else:
                         return False
+            if len(stack) > 0:
+                return False
             return True
 
 def main():
