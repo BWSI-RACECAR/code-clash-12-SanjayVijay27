@@ -36,7 +36,7 @@ class Solution:
             for char in parenthesis:
                 if char in ["{", "[", "("]:
                     stack.append(char)
-                else:
+                elif char in ["}", "]", ")"]:
                     if len(stack) == 0:
                         return False
                     if stack[-1] == "{" and char == "}":
